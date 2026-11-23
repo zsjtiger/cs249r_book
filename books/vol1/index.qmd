@@ -2,13 +2,13 @@
 format:
   html:
     title-block-style: default
-    title: "Introduction to Machine Learning Systems"
-    pagetitle: "Introduction to Machine Learning Systems (Volume I) | MLSysBook"
-    description-meta: "Volume I of Machine Learning Systems. How to engineer the data, algorithms, and machines of a learning system as one design, developed on a single machine."
+    title: "机器学习系统导论"
+    pagetitle: "机器学习系统导论（第一卷）| MLSysBook"
+    description-meta: "《机器学习系统》第一卷。如何将学习系统的数据、算法与机器作为一个整体进行工程设计，并在单机上完成开发。"
     date: today
     date-format: long
     doi: "v0.8.1"
-    doi-title: "Version"
+    doi-title: "版本"
     author:
       name: Vijay Janapa Reddi
       email: vj@eecs.harvard.edu
@@ -19,54 +19,54 @@ format:
 ::: {.content-visible when-format="html:js"}
 
 ```{=html}
-<p id="welcome" class="unnumbered" style="font-size: 2rem; font-weight: 600; line-height: 1.2; margin: 1.1rem 0 1rem;">Welcome</p>
+<p id="welcome" class="unnumbered" style="font-size: 2rem; font-weight: 600; line-height: 1.2; margin: 1.1rem 0 1rem;">欢迎</p>
 
 <div class="abstract-section">
   <div class="abstract-content">
-    <p>Machine learning systems are computer systems whose behavior is learned from data rather than written by hand. Building one means engineering the data that trains the model, the algorithms that define it, and the machines that run it as a single design, because a weakness in any one of them limits the whole. Progress in machine learning has come mostly from general methods that improve as data and computation grow, so the system that carries a model increasingly decides what the model can achieve.</p>
-    <p>This book develops these principles on a single machine, where every constraint is visible and measurable. It covers how deployment settings, from datacenter to microcontroller, set budgets for memory, power, and response time, and how data engineering bounds what a model can learn. It follows a model from mathematics to hardware through neural computation, architectures, frameworks, and training. It then treats optimization through data selection, model compression, and hardware acceleration, with benchmarking to verify each gain, and closes with serving, operations, and responsible engineering in production.</p>
+    <p>机器学习系统是行为由数据学习而来、而非由人手工编写的计算机系统。构建这样的系统，意味着把训练模型的数据、定义模型的算法和运行模型的机器作为一个整体来设计，因为其中任何一环的短板都会限制整个系统。机器学习的进展大多来自那些随数据和算力增长而持续改进的通用方法，因此承载模型的系统，越来越决定了模型能够达到的上限。</p>
+    <p>本书在单台机器上阐述这些原理，因为在这里每一项约束都清晰可见、可以度量。书中讨论部署场景从数据中心到微控制器如何设定内存、功耗和响应时间的预算，以及数据工程如何界定模型能够学习的范围。全书沿着神经计算、模型架构、框架和训练的路径，带你从数学一直走到硬件。随后，本书通过数据选择、模型压缩和硬件加速来讨论优化，并以基准测试验证每一项性能提升；最后以生产环境中的模型服务、运维和负责任的工程实践收尾。</p>
   </div>
 
   <div class="book-card-link">
     <div class="book-card">
-      <img src="covers/cover-hardcover-book-vol1.webp" alt="Machine Learning Systems Book Cover" class="book-image" />
-      <p class="book-title">Introduction to Machine Learning Systems</p>
-      <p class="book-subtitle">Publisher: The MIT Press (2026)</p>
+      <img src="covers/cover-hardcover-book-vol1.webp" alt="《机器学习系统》图书封面" class="book-image" />
+      <p class="book-title">机器学习系统导论</p>
+      <p class="book-subtitle">出版社：麻省理工学院出版社（The MIT Press，2026）</p>
     </div>
   </div>
 </div>
 ```
 
-<p id="learning-path" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">Learning Path</p>
+<p id="learning-path" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">学习路径</p>
 
-The book progresses through four stages:
+全书分为四个阶段：
 
-- **Part I: Foundations.** What is being built, under which physical constraints, across which lifecycle stages, and from what engineered data pipelines.
-- **Part II: Development.** How mathematical models reach hardware execution, through neural computation, model architectures, frameworks, and single-node training loops.
-- **Part III: Optimization.** How data selection, model compression, and hardware acceleration reduce system cost, and how benchmarking verifies each claimed speedup.
-- **Part IV: Deployment.** How the system serves live requests under strict latency budgets, how monitoring catches silent drift and skew in production, and how responsible engineering controls are enforced.
+- **第一部分：基础。** 要构建什么系统、受哪些物理约束限制、横跨哪些生命周期阶段，以及依赖哪些经过工程设计的数据管道。
+- **第二部分：开发。** 数学模型如何走向硬件执行，涵盖神经计算、模型架构、框架以及单节点训练循环。
+- **第三部分：优化。** 数据选择、模型压缩和硬件加速如何降低系统成本，以及基准测试如何验证每一项声称的加速效果。
+- **第四部分：部署。** 系统如何在严格的延迟预算下服务实时请求，监控如何发现生产环境中悄然出现的漂移和偏差，以及负责任的工程控制如何落地执行。
 
-<p id="prerequisites" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">Prerequisites</p>
+<p id="prerequisites" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">前置知识</p>
 
-Readers should bring two core prerequisites, along with helpful background developed in the text:
+读者需要具备两项核心前置知识，此外书中还会补充一些有帮助的背景知识：
 
-- **Programming proficiency**: Fluency in Python, including familiarity with NumPy array manipulation.
-- **Mathematics foundations**: Comfort with undergraduate linear algebra, calculus, and probability.
-- **Machine learning context**: Prior ML exposure is helpful but not required; @sec-neural-computation builds the modeling foundations from first principles.
+- **编程能力**：熟练使用 Python，包括熟悉 NumPy 数组操作。
+- **数学基础**：熟悉本科水平的线性代数、微积分和概率论。
+- **机器学习背景**：有机器学习基础会有帮助，但并非必需；@sec-neural-computation 会从第一性原理出发建立建模基础。
 
-<p id="support-our-mission" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">Support Our Mission</p>
+<p id="support-our-mission" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">支持我们的使命</p>
 
 ```{=html}
 <div class="support-mission">
-  <p><strong>Goal:</strong> Help 100,000 students learn machine learning systems. Sponsors like the <a href="https://edgeaifoundation.org/" target="_blank" rel="noopener noreferrer">EDGE AI Foundation</a> match every star with funding that supports learning.</p>
+  <p><strong>目标：</strong>帮助十万名学生学习机器学习系统。EDGE AI Foundation 等赞助方会为每一颗 Star 匹配资金，用于支持学习。</p>
 
   <div class="support-actions">
-    <span class="star-count" id="star-count">Loading...</span>
-    <a href="https://github.com/harvard-edge/cs249r_book" target="_blank" rel="noopener" class="github-star-btn">Star on GitHub</a>
+    <span class="star-count" id="star-count">加载中...</span>
+    <a href="https://github.com/harvard-edge/cs249r_book" target="_blank" rel="noopener" class="github-star-btn">在 GitHub 上点赞</a>
   </div>
 
   <p class="support-note">
-    <a href="https://opencollective.com/mlsysbook" target="_blank" rel="noopener">Support us on Open Collective →</a>
+    <a href="https://opencollective.com/mlsysbook" target="_blank" rel="noopener">在 Open Collective 上支持我们 →</a>
   </p>
 </div>
 ```
@@ -85,7 +85,7 @@ async function fetchGitHubStars() {
     starElement.style.opacity = '1';
   } catch (error) {
     console.error('Failed to fetch GitHub stars:', error);
-    starElement.textContent = 'Unavailable';
+    starElement.textContent = '暂不可用';
     starElement.style.opacity = '1';
   }
 }
@@ -94,22 +94,22 @@ document.addEventListener('DOMContentLoaded', fetchGitHubStars);
 </script>
 ```
 
-<p id="listen-to-the-machine-learning-systems-podcast" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">Listen to the Machine Learning Systems Podcast</p>
+<p id="listen-to-the-machine-learning-systems-podcast" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">收听《机器学习系统》播客</p>
 
 ```{=html}
 <div class="podcast-section">
   <p>
-    This short podcast, created with Google's NotebookLM and inspired by insights from our <a href="https://web.eng.fiu.edu/gaquan/Papers/ESWEEK24Papers/CPS-Proceedings/pdfs/CODES-ISSS/563900a043/563900a043.pdf" target="_blank" rel="noopener">IEEE education viewpoint paper</a>, offers an accessible overview of the book's key ideas and themes.
+    这段短播客由 Google 的 NotebookLM 制作，灵感来自我们的<a href="https://web.eng.fiu.edu/gaquan/Papers/ESWEEK24Papers/CPS-Proceedings/pdfs/CODES-ISSS/563900a043/563900a043.pdf" target="_blank" rel="noopener">IEEE 教育观点论文</a>，以通俗易懂的方式概述本书的核心思想与主题。
   </p>
   <audio controls="controls">
     <source src="../../assets/media/notebooklm_podcast_mlsysbookai.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
+    您的浏览器不支持 audio 元素。
   </audio>
 </div>
 ```
 
-<p id="contributing" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">Contributing</p>
+<p id="contributing" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">参与贡献</p>
 
-This is a collaborative project, and the [contribution guidelines](https://github.com/harvard-edge/cs249r_book/blob/main/CONTRIBUTING.md) explain how to participate. Feedback, corrections, and new ideas are welcome through GitHub [issues](https://github.com/harvard-edge/cs249r_book/issues).
+这是一个协作项目，[贡献指南](https://github.com/harvard-edge/cs249r_book/blob/main/CONTRIBUTING.md)说明了如何参与。欢迎通过 GitHub [Issues](https://github.com/harvard-edge/cs249r_book/issues) 提出反馈、勘误和新想法。
 
 :::

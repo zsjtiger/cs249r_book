@@ -2,9 +2,9 @@
 format:
   html:
     title-block-style: default
-    title: "Scaling Machine Learning Systems"
-    pagetitle: "Scaling Machine Learning Systems (Volume II) | MLSysBook"
-    description-meta: "Volume II of Machine Learning Systems. How to build and operate fleets of accelerators that train and serve models as if they were one machine."
+    title: "机器学习系统规模化"
+    pagetitle: "机器学习系统规模化（第二卷）| MLSysBook"
+    description-meta: "《机器学习系统》第二卷。如何构建和运营由加速器组成的集群，让大规模训练和服务的模型如同运行在一台机器上。"
     date: today
     date-format: long
     author:
@@ -17,55 +17,55 @@ format:
 ::: {.content-visible when-format="html:js"}
 
 ```{=html}
-<p id="welcome" class="unnumbered" style="font-size: 2rem; font-weight: 600; line-height: 1.2; margin: 1.1rem 0 1rem;">Welcome</p>
+<p id="welcome" class="unnumbered" style="font-size: 2rem; font-weight: 600; line-height: 1.2; margin: 1.1rem 0 1rem;">欢迎</p>
 
 <div class="abstract-section">
   <div class="abstract-content">
-    <p>Machine learning systems at scale are fleets of thousands of accelerators, joined by networks and storage, that train and serve models as if they were one machine. Engineering them means designing the fleet as a whole, because at this size communication between machines can cost more than computation, hardware failure becomes routine, and system behavior emerges from interactions no single component controls. Model quality improves predictably as data, parameters, and compute grow, and that predictability is why fleets keep growing.</p>
-    <p>This book develops the principles for building and operating such fleets. It begins with physical infrastructure, including datacenter compute and power, the network fabrics that join accelerators, and the storage systems that feed them. It then covers distributed training, including collective communication, parallelism strategies, fault tolerance, and cluster orchestration. It turns next to production, with fleet efficiency, inference for models too large for one device, edge and federated learning, and operations at scale, and it closes with security, privacy, robustness, sustainability, and responsible AI as properties a fleet must be engineered to enforce.</p>
+    <p>大规模机器学习系统是由成千上万块加速器组成的集群，它们通过网络和存储相连，共同训练和服务模型，如同一台机器。构建这样的系统，需要从整体上设计整个集群，因为在这种规模下，机器之间的通信开销可能超过计算本身，硬件故障成为常态，而系统行为则源于任何单一组件都无法控制的交互。模型质量会随着数据、参数量和算力的增长而可预测地提升，正是这种可预测性促使集群不断扩大。</p>
+    <p>本书阐述构建和运营此类集群的原理。全书从物理基础设施讲起，包括数据中心的计算与供电、连接加速器的网络结构，以及为其供给数据的存储系统。随后讨论分布式训练，涵盖集合通信、并行策略、容错和集群编排。接着转向生产环境，涉及集群效率、超出单设备容量的模型推理、边缘与联邦学习，以及规模化运维。最后，本书以安全、隐私、鲁棒性、可持续性和负责任的 AI 收尾，这些都是集群必须从工程上加以保障的属性。</p>
   </div>
 
   <div class="book-card-link">
     <div class="book-card">
-      <img src="covers/cover-hardcover-book-vol2.webp" alt="Cover of Scaling Machine Learning Systems, a hardcover textbook on distributed ML systems." class="book-image" />
-      <p class="book-title">Scaling Machine Learning Systems</p>
-      <p class="book-subtitle">Publisher: The MIT Press (2027)</p>
+      <img src="covers/cover-hardcover-book-vol2.webp" alt="《机器学习系统规模化》精装教材封面，关于分布式机器学习系统。" class="book-image" />
+      <p class="book-title">机器学习系统规模化</p>
+      <p class="book-subtitle">出版社：麻省理工学院出版社（The MIT Press，2027）</p>
     </div>
   </div>
 </div>
 ```
 
-<p id="what-you-will-learn" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">What You Will Learn</p>
+<p id="what-you-will-learn" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">你将学到什么</p>
 
-This book extends the foundations into production-scale systems through four parts that follow the fleet stack from bottom to top:
+本书在第一卷的基础上延伸到生产规模的系统，按照集群技术栈自下而上，分为四个部分：
 
-- **Part I: The Fleet.** The data-center infrastructure, high-bandwidth network fabrics, and scalable storage that every distributed ML deployment runs on.
-- **Part II: Distributed ML.** How computation is coordinated across thousands of devices, through collective communication primitives, parallelism strategies, fault tolerance mechanisms, and fleet orchestration.
-- **Part III: The Fleet in Production.** How much of the fleet's capacity becomes useful work, the shift from training to serving, ML at the edge, and the operational lifecycle of production fleets.
-- **Part IV: The Responsible Fleet.** Security, robustness, environmental sustainability, and responsible engineering in large-scale operations.
+- **第一部分：集群。** 每一个分布式机器学习部署都依赖的数据中心基础设施、高带宽网络结构和可扩展存储。
+- **第二部分：分布式机器学习。** 如何通过集合通信原语、并行策略、容错机制和集群编排，协调成千上万台设备上的计算。
+- **第三部分：生产中的集群。** 集群中有多少容量能转化为有效工作，从训练转向服务的过程，边缘端的机器学习，以及生产集群的运维生命周期。
+- **第四部分：负责任的集群。** 大规模运维中的安全、鲁棒性、环境可持续性和负责任的工程实践。
 
-<p id="prerequisites" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">Prerequisites</p>
+<p id="prerequisites" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">前置知识</p>
 
-Readers should bring the following background:
+读者应具备以下背景：
 
-- **Foundational background** in single-machine ML systems, or equivalent experience
-- **Programming proficiency** in Python with familiarity in NumPy
-- **Mathematics foundations** in linear algebra, calculus, and probability
-- **Distributed systems familiarity** (networking, parallelism), which is helpful for advanced topics but not required
+- **单机机器学习系统基础**，或同等经验
+- **编程能力**：熟练使用 Python，熟悉 NumPy
+- **数学基础**：线性代数、微积分和概率论
+- **分布式系统基础**（网络、并行），对进阶内容有帮助但并非必需
 
-<p id="support-our-mission" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">Support Our Mission</p>
+<p id="support-our-mission" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">支持我们的使命</p>
 
 ```{=html}
 <div class="support-mission">
-  <p>Sponsors like the <a href="https://edgeaifoundation.org/" target="_blank" rel="noopener noreferrer">EDGE AI Foundation</a> match every star with funding that supports learning.</p>
+  <p>EDGE AI Foundation 等赞助方会为每一颗 Star 匹配资金，用于支持学习。</p>
 
   <div class="support-actions">
-    <span class="star-count" id="star-count">Loading...</span>
-    <a href="https://github.com/harvard-edge/cs249r_book" target="_blank" rel="noopener" class="github-star-btn">Star on GitHub</a>
+    <span class="star-count" id="star-count">加载中...</span>
+    <a href="https://github.com/harvard-edge/cs249r_book" target="_blank" rel="noopener" class="github-star-btn">在 GitHub 上点赞</a>
   </div>
 
   <p class="support-note">
-    <a href="https://opencollective.com/mlsysbook" target="_blank" rel="noopener">Support us on Open Collective →</a>
+    <a href="https://opencollective.com/mlsysbook" target="_blank" rel="noopener">在 Open Collective 上支持我们 →</a>
   </p>
 </div>
 ```
@@ -84,7 +84,7 @@ async function fetchGitHubStars() {
     starElement.style.opacity = '1';
   } catch (error) {
     console.error('Failed to fetch GitHub stars:', error);
-    starElement.textContent = 'Loading...';
+    starElement.textContent = '加载中...';
     starElement.style.opacity = '1';
   }
 }
@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', fetchGitHubStars);
 </script>
 ```
 
-<p id="contributing" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">Contributing</p>
+<p id="contributing" class="unnumbered" style="font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin: 1.5rem 0 0.75rem;">参与贡献</p>
 
 ::: {.content-visible when-format="html"}
-This is a collaborative project. The project [contribution guidelines](https://github.com/harvard-edge/cs249r_book/blob/main/CONTRIBUTING.md) explain how to participate. Feedback, corrections, and new ideas are welcome through GitHub [issues](https://github.com/harvard-edge/cs249r_book/issues).
+这是一个协作项目。[项目贡献指南](https://github.com/harvard-edge/cs249r_book/blob/main/CONTRIBUTING.md)说明了如何参与。欢迎通过 GitHub [Issues](https://github.com/harvard-edge/cs249r_book/issues) 提出反馈、勘误和新想法。
 :::
 
 ::: {.content-visible when-format="pdf"}
-This is a collaborative project. The project contribution guidelines explain how to participate, and feedback, corrections, and new ideas are welcome through the GitHub issue tracker at the book's repository (`harvard-edge/cs249r_book`).
+这是一个协作项目。项目贡献指南说明了如何参与；欢迎通过本书代码仓库（`harvard-edge/cs249r_book`）的 GitHub Issue 追踪器提出反馈、勘误和新想法。
 :::
 
 :::
